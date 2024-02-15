@@ -20,7 +20,7 @@ def fetch_news_article(url):
             # 'id' 속성을 이용해 원하는 뉴스 본문 부분을 찾습니다.
             article_div = soup.find('div', id='newsct_article')
             if article_div:
-                return article_div.get_text(strip=True)  # 텍스트 추출 및 공백 제거
+                return article_div.get_text(strip=False)  # 텍스트 추출 및 공백 제거
             else:
                 return "Article content not found"
         else:
@@ -29,6 +29,11 @@ def fetch_news_article(url):
         return f"Error fetching the news article: {e}"
 
 # 사용 예시
-url = "https://n.news.naver.com/mnews/article/243/0000056255"  # 크롤링하고 싶은 URL
-article_content = fetch_news_article(url)
+# url = "https://n.news.naver.com/mnews/article/243/0000056255"  # 크롤링하고 싶은 URL
+# article_content = fetch_news_article(url)
+# print(article_content)
+    
+# 사용자로부터 URL을 입력받는 부분
+user_input_url = input("Please enter the URL of the news article you want to fetch: ")
+article_content = fetch_news_article(user_input_url)
 print(article_content)
