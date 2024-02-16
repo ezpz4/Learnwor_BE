@@ -1,6 +1,15 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,macos,python,django,venv,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,python,django,venv,visualstudiocode
 
+### Firebase ###
+.idea
+**/node_modules/*
+**/.firebaserc
+
+### Firebase Patch ###
+.runtimeconfig.json
+.firebase/
+
 ### Django ###
 *.log
 *.pot
