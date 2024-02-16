@@ -40,7 +40,9 @@
                 <p>설명을 넣어줘~~  러너에대한 설명. 어쩌고 저쩌고. 우리는 이런이런팀이고 아래에 링크를 넣으면 된다. </p>
             </div>
             <!--링크-->
-            <input type="text" placeholder="링크를 입력하세요." id="inputLink">
+            <form method="post" enctype="multipart/form-data" action="{% url 'home' %}" name="inputLinkForm">{% csrf_token %}
+            <input type="text" placeholder="링크를 입력하세요." id="inputLink" name="inputLink">
+            </form>
         </div>
 
 
@@ -48,10 +50,15 @@
         <div id="translatePage">
             <div>
                 <h5>원문</h5>
-            
+            {% if before_news %}
+            <textarea id="beforeTranslate" cols="60", rows="45" readonly>
+                {{ before_news }}
+            </textarea>
+            {% else %}
             <textarea id="beforeTranslate" cols="60", rows="45" readonly>이런식으로
 
             </textarea>
+            {% endif %}
             </div>
 
             <div>
