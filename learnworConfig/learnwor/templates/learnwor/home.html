@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+    <script src="https://kit.fontawesome.com/87c08dff42.js" crossorigin="anonymous"></script>-->
+    <link rel="stylesheet" href="{% static 'learnwor/css/home.css' %}">
+
+</head>
+
+<body id="container">
+    <!--나브-->
+    <nav class="navbar">
+        <div id="beforeLogin">
+            <button id="loginBtn" name="loginBtn" onclick="location.href='{% url 'login' %}'">Log In
+            </button>
+            <button id="signupBtn" name="signupBtn" onclick="location.href='{% url 'signup' %}'">Sign Up
+            </button>
+        </div>
+
+        <!--로그인 성공시-->
+        <div id="afterLogin">
+            <button id="myPage">회원 이름</button>
+        </div>  
+    </nav>
+
+    <div class="scrollable">
+
+        <!--링크 페이지-->
+        <div id="mainPage" class="scrollable">
+            <!--로고-->   
+            <h1 id="logo">Learnwor</h1>    
+            <!--설명-->
+            <div id="example">
+                <p>러너에대한 설명. 어쩌고 저쩌고. </p>
+                <p>우리는 이런이런팀이고 아래에 링크를 넣으면 된다. </p>
+                <p>설명을 넣어줘~~  러너에대한 설명. 어쩌고 저쩌고. 우리는 이런이런팀이고 아래에 링크를 넣으면 된다. </p>
+            </div>
+            <!--링크-->
+            <input type="text" placeholder="링크를 입력하세요." id="inputLink">
+        </div>
+
+
+        <!--원문, 번역문-->
+        <div id="translatePage">
+            <div>
+                <h5>원문</h5>
+            
+            <textarea id="beforeTranslate" cols="60", rows="45" readonly>이런식으로
+
+            </textarea>
+            </div>
+
+            <div>
+                <h5>원문</h5>
+            <textarea id="afterTranslate" cols="60", rows="45" readonly>?
+
+            </textarea>    
+            </div>
+        </div>
+    <!--소개 페이지-->
+    <!--푸터-->
+    </div>  
+
+<script type="module" src="{% static 'learnwor/js/home.js' %}">
+</script>
+</body>

@@ -1,0 +1,140 @@
+/*나브 바*/
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+#loginBtn{
+    background-color: #9EABBC;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Arsenal';
+    font-style: italic;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+
+    color: #EFECEC;
+}
+#signupBtn{
+    background-color: #9EABBC;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Arsenal';
+    font-style: italic;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+
+    color: #EFECEC;
+}
+#afterLogin {
+    display: none;
+}
+#myPage{
+    background-color: #9EABBC;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Arsenal';
+    font-style: italic;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+
+    color: #EFECEC;
+}
+
+#container{
+    background-color: #9EABBC;
+    
+}
+
+.scrollable {
+    text-align: center;
+}
+/*링크 페이지*/
+#mainPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#logo{
+
+    font-family: 'Arsenal';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 130px;
+    line-height: 163px;
+    color: #EFECEC;
+
+text-shadow: 4px 0px 10px rgba(0, 0, 0, 0.25);
+}
+#example {
+    text-align: center;
+}
+#example p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-family: 'Arsenal';
+    font-size: 15px;
+    line-height: 25px;
+    text-align: center;
+
+    color: #EFECEC;
+}
+input[type="text"] {
+    margin-top: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 960px;
+    height: 74px;
+    left: calc(50% - 960px/2);
+    top: calc(50% - 74px/2 + 177px);
+    
+    background: rgba(239, 236, 236, 0.9);
+    border: 1px solid rgba(12, 45, 87, 0.9);
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 90px;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    
+    text-align:center;
+    color: #9EABBC;
+}
+
+#translatePage{
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 960px; /* 초기 너비 설정 */
+    margin: 0 auto;
+    margin-top: 300px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+#beforeTranslate{
+    margin-bottom: 30px;
+    padding:0;
+    border: none; /* 모든 테두리를 없애고 */
+    outline: none; /* 포커스 테두리도 없애기 */
+    resize: none; /* 크기 조정 기능 비활성화 */
+    border-top: 2px solid #EFECEC;
+    border-right: 2px solid #EFECEC;
+}
+#afterTranslate{
+    margin-bottom: 30px;
+    padding:0;
+    border: none; /* 모든 테두리를 없애고 */
+    outline: none; /* 포커스 테두리도 없애기 */
+    resize: none; /* 크기 조정 기능 비활성화 */
+    border-top: 2px solid #EFECEC;
+}
