@@ -19,8 +19,7 @@ def login(request):
     return render(request, 'learnwor/login.html')
 
 def signup(request):
-    if request.method == 'POST':
-        print('회원가입 성공')
-        return redirect(resolve_url('home'))
-
     return render(request, 'learnwor/signup.html')
+
+def myPage(request):
+    return render(request, 'learnwor/mypage.html')

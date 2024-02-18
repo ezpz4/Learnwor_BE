@@ -32,6 +32,7 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
                 sessionStorage.setItem("loggedIn", email);
                 const session = sessionStorage.getItem("loggedIn");
                 console.log(session);
+                window.location.href = 'http://127.0.0.1:8000/home/';
             })
             .catch((error) => {
                 console.log('로그인 실패')
@@ -44,6 +45,12 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
             });
 
     })
+
+    window.onpageshow = function(event) {
+        if (event.persisted) {
+            window.location.reload();
+        }
+    };
     /*const signupSuccess = () => {
         window.location.href = "/learnworHome/";
     };*/

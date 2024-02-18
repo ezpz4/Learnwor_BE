@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ko">
   <head>
       <meta charset="UTF-8" />
@@ -6,31 +7,32 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <script src="https://kit.fontawesome.com/87c08dff42.js" crossorigin="anonymous"></script>
       
-      <link rel="stylesheet" href="../css/signup.css">
+      <link rel="stylesheet" href="{% static 'learnwor/css/signup.css'%}">
   </head>
 
 <body id="container">
 
+  <!--나브-->
   <nav class="navbar">
     <div class="nav_logo">
-      <a href="">Learnwor</a>
+        <a href="{% url 'home'%}">Learnwor</a>
     </div>
     <ul class="nav_menu">
-      <li><a href="./home.html">Home</a></li>
-      <li><a href="./mypage.html">My Page</a></li>
+        <li><a href="{% url 'home'%}">Home</a></li>
+        <li><a href="{% url 'myPage'%}">My Page</a></li>
     </ul>
     <ul class="nav_login">
-      <li><a href="./login.html">Login</a></li>
-      <li><a href="./signup.html">SignUp</a></li>
+        <li><a href="{% url 'login'%}">Login</a></li>
+        <li><a href="{% url 'signup'%}">SignUp</a></li>
     </ul>
     <a href="#" class="navbar_toggleBtn">
-      <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-bars"></i>
     </a>
-  </nav>
+    </nav>
 
   <div class="login-wrapper">
     <h2>Sign Up</h2>
-    <form method="post" action="#" id="signup-form">
+    <form method="post" action="#" id="signup-form">{% csrf_token %}
       <div class="form-control">
         <span id="username">Username</span>
         <input type="text" id="userName" placeholder="Enter username" required autocomplete="off">
@@ -49,7 +51,7 @@
         <input type="password" id="confirmUserPassword" placeholder="Enter password again" required>
       </div>
 
-      <input type="submit" id="signupSubmitButton"value="Sign Up" style="cursor:pointer" onclick="location.href='./login.html';">
+      <input type="submit" id="signupSubmitButton"value="Sign Up" style="cursor:pointer">
     </form>
 
   </div>
@@ -58,7 +60,7 @@
     <p>&copy; 2024 Your Website. All rights reserved.</p>
   </footer>
 
-  <script type="module" src="../js/signup.js">
+  <script type="module" src="{% static 'learnwor/js/signup.js'%}">
   </script>
 </body>
 </html>

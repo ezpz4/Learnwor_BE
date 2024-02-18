@@ -33,9 +33,9 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => { 
                 console.log(userCredential)
-                console.log('로그인 성공')
+                console.log('회원가입 성공')
                 const user = userCredential.user;
-                //window.location.href = 'http://127.0.0.1:8000/learnworHome/';
+                window.location.href = 'http://127.0.0.1:8000/home/';
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -43,6 +43,12 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
                 console.log(error.message)
             });
     })
+
+    window.onpageshow = function(event) {
+        if (event.persisted) {
+            window.location.reload();
+        }
+    };
 
     /*
     async function sendPostRequest(email, password, csrfToken) {
