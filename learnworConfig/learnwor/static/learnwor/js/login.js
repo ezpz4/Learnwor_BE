@@ -19,31 +19,38 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
 
     document.getElementById('loginSubmitButton').addEventListener('click', async (event) => {
         //로그인
-        event.preventDefault()
-        const email = document.getElementById('userEmail').value
-        const password = document.getElementById('userPassword').value
-        const auth = getAuth();
+        var userEmail = document.getElementById('userEmail').value;
+        var userPassword = document.getElementById('userPassword').value;
 
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                console.log(userCredential)
-                console.log('로그인 성공')
-                const user = userCredential.user;
-                sessionStorage.setItem("loggedIn", email);
-                const session = sessionStorage.getItem("loggedIn");
-                console.log(session);
-                window.location.href = 'http://127.0.0.1:8000/home/';
-            })
-            .catch((error) => {
-                console.log('로그인 실패')
+        if(userEmail == "" || userPassword == ""){
+            alert("빈칸을 입력해주세요.")
+            event.preventDefault()
+        }else{
+            event.preventDefault()
+            const email = document.getElementById('userEmail').value
+            const password = document.getElementById('userPassword').value
+            const auth = getAuth();
 
-                if(email == null){
-                    console.log('이메일 없음')
-                }
-                const errorCode = error.code;
-                const errorMessage = error.message;
-            });
-
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    console.log(userCredential)
+                    console.log('로그인 성공')
+                    const user = userCredential.user;
+                    sessionStorage.setItem("loggedIn", email);
+                    const session = sessionStorage.getItem("loggedIn");
+                    console.log(session);
+                    window.location.href = 'http://127.0.0.1:8000/home/';
+                })
+                .catch((error) => {
+                    console.log('로그인 실패')
+                    alert("로그인 실패")
+                    if(email == null){
+                        console.log('이메일 없음')
+                    }
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                });
+        }
     })
 
     window.onpageshow = function(event) {
@@ -51,7 +58,3 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
             window.location.reload();
         }
     };
-    /*const signupSuccess = () => {
-        window.location.href = "/learnworHome/";
-    };*/
-
