@@ -12,23 +12,11 @@
 
 <body id="container">
 
-  <!--나브-->
-  <nav class="navbar">
-    <div class="nav_logo">
-        <a href="{% url 'home'%}">Learnwor</a>
-    </div>
-    <ul class="nav_menu">
-        <li><a href="{% url 'home'%}">Home</a></li>
-        <li><a href="{% url 'mypage'%}">My Page</a></li>
-    </ul>
-    <ul class="nav_login">
-        <li><a href="{% url 'login'%}">Login</a></li>
-        <li><a href="{% url 'signup'%}">SignUp</a></li>
-    </ul>
-    <a href="#" class="navbar_toggleBtn">
-        <i class="fa-solid fa-bars"></i>
-    </a>
-    </nav>
+  <div class="logos">
+    <h1 id="logo">
+      <a href="{% url 'home'%}">Learnwor</a>
+    </h1>
+  </div>
 
   <div class="login-wrapper">
     <h2>Sign Up</h2>
@@ -54,10 +42,17 @@
       <input type="submit" id="signupSubmitButton"value="Sign Up" style="cursor:pointer">
     </form>
 
+    <div id="login">
+      <p class="intro">If you already have an account -> </p>
+      <a href="{% url 'login'%}" title="login">
+        Sign in
+      </a>
+    </div> 
+
   </div>
 
   <footer>
-    <p>&copy; 2024 Your Website. All rights reserved.</p>
+    <p><b>Learnwor</b> Copyright &copy; <b>Ezpz Corp</b>. All Rights Reserved.</p>
   </footer>
 
   <script type="module" src="{% static 'learnwor/js/signup.js'%}">

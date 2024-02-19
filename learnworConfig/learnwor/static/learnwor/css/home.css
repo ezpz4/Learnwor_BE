@@ -14,6 +14,9 @@
     left: 0;
     right: 0;
 }
+#beforeLogin{
+    display: block;
+}
 #loginBtn{
     background-color: #9EABBC;
     border: none;
@@ -24,7 +27,7 @@
     font-size: 20px;
     line-height: 40px;
     text-align: center;
-
+    margin-right: 10px;
     color: #EFECEC;
 }
 #signupBtn{
@@ -37,13 +40,13 @@
     font-size: 20px;
     line-height: 40px;
     text-align: center;
-
+    margin-right: 10px;
     color: #EFECEC;
 }
 #afterLogin {
     display: none;
 }
-#myPage{
+#mypageBtn{
     background-color: #9EABBC;
     border: none;
     text-decoration: none;
@@ -53,13 +56,27 @@
     font-size: 20px;
     line-height: 40px;
     text-align: center;
-
+    margin-right: 10px;
+    color: #EFECEC;
+}
+#logoutBtn{
+    background-color: #9EABBC;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Arsenal';
+    font-style: italic;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    margin-right: 10px;
     color: #EFECEC;
 }
 
 #container{
-    background-color: #9EABBC;
-    
+    /* background-color: #ffffff; */
+    background: url('../images/wave.png') left top no-repeat;
+    background-size: contain;
 }
 
 .scrollable {
@@ -72,17 +89,50 @@
     align-items: center;
     justify-content: center;
 }
+
+.logos{
+    position: relative;
+    display: flex;
+    justify-content: center; /* 로고를 중앙에 위치 */
+    align-items: center; /* 로고를 수직 중앙에 위치 */
+}
+
 #logo{
+    margin-top: 150px;
     font-family: 'Arsenal';
     font-style: italic;
     font-weight: 400;
     font-size: 130px;
     line-height: 163px;
     color: #EFECEC;
-    margin-top: 150px;
+    z-index: 2; /* 로고를 원 위에 표시 */
+    /* position: absolute; */
 
 text-shadow: 4px 0px 10px rgba(0, 0, 0, 0.25);
 }
+
+.circle1{
+    width: 150px;
+    height: 150px;
+    background: #FC6736;
+    border-radius: 90px;
+    position: absolute;
+    top: 16%;
+    left: 45%;
+    /* position: relative; */
+}
+
+.circle2{
+    width: 40px;
+    height: 40px;
+    background: #FFB0B0;
+    border-radius: 90px;
+    position: absolute;
+    top: 13%;
+    left: 40%;
+    /* position: relative; */
+}
+
 #example {
     text-align: center;
 }
@@ -99,7 +149,6 @@ text-shadow: 4px 0px 10px rgba(0, 0, 0, 0.25);
 input[type="text"] {
     margin-top: 100px;
     box-sizing: border-box;
-    /* position: absolute; */
     width: 1000px;
     height: 74px;
     left: calc(50% - 960px/2);
@@ -132,6 +181,10 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
+.before, .after{
+    margin: 8px;
+}
+
 #beforeTranslate{
     margin-bottom: 30px;
     padding:0;
@@ -157,20 +210,35 @@ body{
 }
 
 .container2{
+    /* position: absolute; */
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 100px;
+}
+.left-section {
+    /* position: absolute; */
+    flex: 1;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Center children horizontally */
-    text-align: left; /* Center text for all children */
-    margin-bottom: 100px;
+    justify-content: center;
+}
+.right-section {
+    /* position: absolute; */
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .title {
     font-family: 'Arsenal', sans-serif; /* Ensure the 'Arsenal' font is loaded */
     font-style: italic;
-    font-weight: 200;
+    font-weight: 30;
     font-size: 65px;
     line-height: 163px;
-    color: #EFECEC;
+    color: #0C2D57;
     text-shadow: 4px 0px 10px rgba(0, 0, 0, 0.25);
     margin: 0; /* Remove any margin that could disrupt the layout */
     padding: 20px 0; /* Provide some spacing above and below the title */
@@ -182,17 +250,37 @@ body{
     margin-left: 20px;
 }
 
-.footer {
-      width:100%;  /* 영역 너비 */
-      height:50px;  /* 높이 */
-      background:#9EABBC;  /* 배경 색 */
-      color:rgb(255,255,255);  /* 글자 색 */
-      text-align: center; /* 가로 정렬 - 가운데 */
-      line-height: 100px;   /* 세로 정렬 - 가운데. line-height 값과 height 값을 같게 */
-    }
+/* footer */
+footer{
+    background-color: #9EABBC;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.container, .scrollable, #container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
 
 /* navbar */
-.body {
+/* .body {
 margin: 0;
 font-family: 'Montserrat';}
 
@@ -244,4 +332,5 @@ display: none;
 color:#f0f4f5;
 position: absolute;
 right: 32px;
-font-size: 24px;}
+font-size: 24px;} */
+

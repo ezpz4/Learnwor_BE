@@ -12,30 +12,59 @@
 </head>
 
 <body id="container">
-    <!--나브-->
+
     <nav class="navbar">
-        <div class="nav_logo">
-            <a href="{% url 'home'%}">Learnwor</a>
+        <div id="beforeLogin">
+            <button id="loginBtn" name="loginBtn">Log In
+            </button>
+            <button id="signupBtn" name="signupBtn">Sign Up
+            </button>
         </div>
-        <ul class="nav_menu">
-            <li><a href="{% url 'home'%}">Home</a></li>
-            <li><a href="{% url 'mypage'%}">My Page</a></li>
-        </ul>
-        <ul class="nav_login">
-            <li><a href="{% url 'login'%}">Login</a></li>
-            <li><a href="{% url 'signup'%}">SignUp</a></li>
-        </ul>
-        <a href="#" class="navbar_toggleBtn">
-            <i class="fa-solid fa-bars"></i>
-        </a>
-        </nav>
+
+        <!-- 로그인 성공시-->
+        <div id="afterLogin">
+            <button id="mypageBtn" name="mypage">
+                My page
+            </button>
+            <button id="logoutBtn" name="logout">
+                Logout
+            </button>
+        </div>  
+    </nav> 
+
+    {% comment %} <nav class="navbar">
+        <div id="beforeLogin">
+            <button id="loginBtn" name="loginBtn">
+                <a href="{% url 'login'%}">Log In</a>
+            </button>
+            <button id="signupBtn" name="signupBtn">
+                <a href="{% url 'signup'%}">Sign Up</a>
+            </button>
+        </div>
+
+        <!-- 로그인 성공시-->
+        <div id="afterLogin">
+            <button id="mypageBtn" name="mypage">
+                <a href="{% url 'mypage'%}">My page</a>
+            </button>
+            <button id="logoutBtn" name="logout">
+                <a href="{% url 'logout'%}">Logout</a>
+            </button>
+        </div>  
+    </nav> {% endcomment %}
 
     <div class="scrollable">
 
         <!--링크 페이지-->
         <div id="mainPage" class="scrollable">
-            <!--로고-->   
-            <h1 id="logo">Learnwor</h1>    
+            <!--로고-->     
+            <h1 id="logos">
+                <h1 id="logo">Learnwor</h1>
+                <div class="circles">
+                    <div class="circle1"></div>   
+                    <div class="circle2"></div>  
+                </div> 
+            </h1>    
             <!--설명-->
             <div id="example">
                 <p>러너에대한 설명. 어쩌고 저쩌고. </p>
@@ -44,7 +73,7 @@
             </div>
             <!--링크-->
             <form method="post" enctype="multipart/form-data" action="{% url 'home' %}" name="inputLinkForm">{% csrf_token %}
-            <input type="text" placeholder="링크를 입력하세요." id="inputLink" name="inputLink">
+                <input type="text" placeholder="링크를 입력하세요." id="inputLink" name="inputLink">
             </form>
         </div>
 
@@ -52,7 +81,7 @@
         <!--원문, 번역문-->
         <div id="translatePage">
             <div>
-                <h5>원문</h5>
+                <h4 class="before">원문</h4>
             {% if before_news %}
             <textarea id="beforeTranslate" cols="60", rows="45" readonly>
                 {{ before_news }}
@@ -65,7 +94,7 @@
             </div>
 
             <div>
-                <h5>번역문</h5>
+                <h4 class="after">번역문</h4>
                 {% if after_news %}
                 <textarea id="beforeTranslate" cols="60", rows="45" readonly>
                     {{ after_news }}
@@ -77,9 +106,33 @@
                 {% endif %}   
             </div>
         </div>
+
     <!--소개 페이지-->
+    <div class="container2">
+        <!-- <div class="left-section">
+            <img src="../images/IMG_3237.jpeg">
+        </div> -->
+        <div class="right-section">
+            <div class="title">"LearnNow"란?</div>
+            <div class="content">
+                <p>러너에대한 설명. 어쩌고 저쩌고. </br>
+                    우리는 이런이런팀이고 아래에 링크를 넣으면 된다. </br>
+                    설명을 넣어줘~~  러너에대한 설명. 어쩌고 저쩌고. </br>
+                    우리는 이런이런팀이고 아래에 링크를 넣으면 된다.</p>
+                <p>러너에대한 설명. 어쩌고 저쩌고. </br>
+                    우리는 이런이런팀이고 아래에 링크를 넣으면 된다. </br>
+                    설명을 넣어줘~~  러너에대한 설명. 어쩌고 저쩌고. </br>
+                    우리는 이런이런팀이고 아래에 링크를 넣으면 된다.</p>
+            </div>
+        </div>
+    </div>
+
     <!--푸터-->
-    </div>  
+    <footer>
+        <p><b>Learnwor</b> Copyright &copy; <b>Ezpz Corp</b>. All Rights Reserved.</p>
+    </footer>
+
+</div>  
 
 <script type="module" src="{% static 'learnwor/js/home.js' %}">
 </script>

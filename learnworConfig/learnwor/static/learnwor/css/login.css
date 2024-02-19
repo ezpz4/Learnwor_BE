@@ -7,7 +7,7 @@
 #container{
   /* display: flex;  */
   justify-content: center;
-  background-color:#9EABBC;
+  background-color:#ffffff;
 }
 
 
@@ -16,16 +16,41 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+.logos{
+  position: relative;
+  display: flex;
+  justify-content: center; /* 로고를 중앙에 위치 */
+  align-items: center; /* 로고를 수직 중앙에 위치 */
+}
+
+#logo{
+  margin-top: 100px;
+  font-family: 'Arsenal';
+  font-style: italic;
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 163px;
+  color: #0C2D57;
+  text-shadow: 4px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+#logo > a{
+  color: #0C2D57;
+}
+
 .login-wrapper{
   width: 400px;
   height: 350px;
   padding: 40px;
   margin:auto;
-  margin-top:200px;
+  margin-top:20px;
   box-sizing: border-box;
   align-content: center;
   background-color:white;
   border-radius: 3%;
+  border: #a1a1a1;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .login-wrapper > h2{
@@ -117,14 +142,14 @@ a {
   right: 32px;
   font-size: 24px;}
 
-
 /* footer */
 footer {
-  background-color: #333;
-  color: #fff;
+  background-color: #ffffff;
+  color: #0C2D57;
   padding: 20px;
   text-align: center;
   position: fixed;
   bottom: 0;
   width: 100%;
+  margin-bottom: 50px;
 }
