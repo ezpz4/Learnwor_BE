@@ -67,9 +67,9 @@
             </h1>    
             <!--설명-->
             <div id="example">
-                <p>러너에대한 설명. 어쩌고 저쩌고. </p>
-                <p>우리는 이런이런팀이고 아래에 링크를 넣으면 된다. </p>
-                <p>설명을 넣어줘~~  러너에대한 설명. 어쩌고 저쩌고. 우리는 이런이런팀이고 아래에 링크를 넣으면 된다. </p>
+                <p>Learnwor는 배우다라는 뜻의 Learn과 단어라는 뜻의 word를 합친 합성어입니다. </p>
+                <p>저희는 비전공자들도 쉽게 뉴스를 읽을 수 있도록 어려운 단어를 쉬운 단어로 바꾸어 제공합니다.</p>
+                <p>어려운 뉴스의 링크를 입력칸에 붙여넣으면 Learnwor가 쉽게 읽을 수 있도록 번역해드릴게요!</p>
             </div>
             <!--링크-->
             <form method="post" enctype="multipart/form-data" action="{% url 'home' %}" name="inputLinkForm">{% csrf_token %}
@@ -87,7 +87,7 @@
                 {{ before_news }}
             </textarea>
             {% else %}
-            <textarea id="beforeTranslate" cols="60", rows="45" readonly>....
+            <textarea id="beforeTranslate" cols="60", rows="45" readonly> 뉴스 원문이 입력됩니다. 
 
             </textarea>
             {% endif %}
@@ -100,7 +100,7 @@
                     {{ after_news }}
                 </textarea>
                 {% else %}
-                <textarea id="beforeTranslate" cols="60", rows="45" readonly>....
+                <textarea id="beforeTranslate" cols="60", rows="45" readonly> 쉬운 단어로 번역된 내용이 입력됩니다.
     
                 </textarea>
                 {% endif %}   
@@ -115,14 +115,10 @@
         <div class="right-section">
             <div class="title">"LearnNow"란?</div>
             <div class="content">
-                <p>러너에대한 설명. 어쩌고 저쩌고. </br>
-                    우리는 이런이런팀이고 아래에 링크를 넣으면 된다. </br>
-                    설명을 넣어줘~~  러너에대한 설명. 어쩌고 저쩌고. </br>
-                    우리는 이런이런팀이고 아래에 링크를 넣으면 된다.</p>
-                <p>러너에대한 설명. 어쩌고 저쩌고. </br>
-                    우리는 이런이런팀이고 아래에 링크를 넣으면 된다. </br>
-                    설명을 넣어줘~~  러너에대한 설명. 어쩌고 저쩌고. </br>
-                    우리는 이런이런팀이고 아래에 링크를 넣으면 된다.</p>
+                <h4>Learnwor는 배우다라는 뜻의 Learn과 단어라는 뜻의 word를 합친 합성어입니다. </br>
+                    Learnwor는 비전공자들이 전공 뉴스를 쉽게 이해할 수 있도록 전문 용어를 일반 용어로 변환해주는 서비스를 제공합니다.  </br>
+                    이를 통해 교육 불평등을 해소하고, 모든 사용자가 전문 지식에 쉽게 접근할 수 있도록 돕고자 하는 프로젝트입니다.  </br>
+                    Learnwor는 복잡한 정보를 단순화하여, 지식의 장벽을 낮추고 정보 접근성을 높이는 것을 목표로 합니다.</p>
             </div>
         </div>
     </div>
