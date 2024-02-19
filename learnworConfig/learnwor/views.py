@@ -6,7 +6,7 @@ from konlpy.tag import Okt
 import re
 
 import openai
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "key"
 openai.api_key = OPENAI_API_KEY
 
 df = pd.read_csv('./learnwor/sc_dataset3.csv', encoding='utf-8')
