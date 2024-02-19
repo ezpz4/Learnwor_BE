@@ -55,17 +55,23 @@
                 {{ before_news }}
             </textarea>
             {% else %}
-            <textarea id="beforeTranslate" cols="60", rows="45" readonly>이런식으로
+            <textarea id="beforeTranslate" cols="60", rows="45" readonly>....
 
             </textarea>
             {% endif %}
             </div>
 
             <div>
-                <h5>원문</h5>
-            <textarea id="afterTranslate" cols="60", rows="45" readonly>?
-
-            </textarea>    
+                <h5>번역문</h5>
+                {% if after_news %}
+                <textarea id="beforeTranslate" cols="60", rows="45" readonly>
+                    {{ after_news }}
+                </textarea>
+                {% else %}
+                <textarea id="beforeTranslate" cols="60", rows="45" readonly>....
+    
+                </textarea>
+                {% endif %}   
             </div>
         </div>
     <!--소개 페이지-->
