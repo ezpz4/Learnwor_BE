@@ -1,16 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 
-# url = "https://news.naver.com/section/101"
-
-# response = requests.get(url)
-
-# soup = BeautifulSoup(response.text, 'html.parser')
-
-# links = soup.find_all('a')
-
-# for link in links:
-#     print(link.get('href'))
+# 사용 예시
+# url = "https://n.news.naver.com/mnews/article/243/0000056255"  # 크롤링하고 싶은 URL
+# article_content = fetch_news_article(url)
+# print(article_content)
 
 def fetch_news_article(url):
     try:
@@ -28,12 +22,3 @@ def fetch_news_article(url):
     except Exception as e:
         return f"Error fetching the news article: {e}"
 
-# 사용 예시
-# url = "https://n.news.naver.com/mnews/article/243/0000056255"  # 크롤링하고 싶은 URL
-# article_content = fetch_news_article(url)
-# print(article_content)
-    
-# 사용자로부터 URL을 입력받는 부분
-user_input_url = input("Please enter the URL of the news article you want to fetch: ")
-article_content = fetch_news_article(user_input_url)
-print(article_content)
