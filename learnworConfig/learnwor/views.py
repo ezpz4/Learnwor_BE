@@ -87,3 +87,5 @@ def signup(request):
 def mypage(request):
     return render(request, 'learnwor/mypage.html')
 
+def logout(request):
+    return render(request, 'learnwor/login.html')

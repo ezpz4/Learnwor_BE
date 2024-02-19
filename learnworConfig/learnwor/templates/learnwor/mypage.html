@@ -10,24 +10,27 @@
   </head>
 
   <body id="container">
-    <!--나브-->
-    <nav class="navbar">
-      <div class="nav_logo">
-          <a href="{% url 'home'%}">Learnwor</a>
-      </div>
-      <ul class="nav_menu">
-          <li><a href="{% url 'home'%}">Home</a></li>
-          <li><a href="{% url 'mypage'%}">My Page</a></li>
-      </ul>
-      <ul class="nav_login">
-          <li><a href="{% url 'login'%}">Login</a></li>
-          <li><a href="{% url 'signup'%}">SignUp</a></li>
-      </ul>
-      <a href="#" class="navbar_toggleBtn">
-          <i class="fa-solid fa-bars"></i>
-      </a>
-      </nav>
-    
+
+    <div class=navbox>
+      <div class="circles">
+        <div class="circle1"></div>   
+        <div class="circle2"></div>  
+      </div> 
+      
+      <nav class="navbar">
+        <button id="homeBtn" name="homeBtn">Home
+        </button>
+        <button id="logoutBtn" name="logoutBtn">Logout
+        </button>
+    </nav>
+    </div>
+
+    <!-- <div class="boxs">
+      <div id="box1"></div>
+      <div id="box2"></div>
+      <div id="box3"></div>
+    </div> -->
+
     <div id="boxes">
       <div id="box1">
         <i class="fa-solid fa-user fa-6x"></i>
@@ -94,11 +97,13 @@
     </div>
 
   </div>
+    
   <footer>
-    <p>&copy; 2024 Your Website. All rights reserved.</p>
+    <p><b>Learnwor</b> Copyright &copy; <b>Ezpz Corp</b>. All Rights Reserved.</p>
   </footer>
 
 
-
+  <script type="module" src="{% static 'learnwor/js/mypage.js' %}">
+  </script>
   </body>
 </html>
