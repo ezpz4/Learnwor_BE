@@ -41,9 +41,6 @@ document.getElementById("mypageBtn").addEventListener("click", function() {
     window.location.href = "/home/mypage";
 });
 
-
-
-// 기본 설정 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         
         const firebaseConfig = {
@@ -60,15 +57,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebas
         console.log('hello world')
         console.log(app)
 
-        /**
-         * 
-         * 75번째 줄 ~ 94번째 줄
-         * 현재 로그인 된 계정의 정보를 개발자 도구 칸에서 확인하실 수 있어요.
-         * 처음 화면 켰을 때 아무것도 안나오는 게 정상.
-         * 회원가입 했을 때는 uid만 나오는게 정상.
-         * 로그인 후 uid와 이메일까지 나오는게 정상 입니다.
-         * 
-         */
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 const auth = getAuth();
@@ -83,7 +71,6 @@ onAuthStateChanged(auth, (user) => {
     console.log(uid)
     console.log(display)
 
-    //로그인이 되어있다면, 변경
     beforeLogin.style.display = "none";
     afterLogin.style.display = "block";
     // ...
@@ -95,11 +82,12 @@ onAuthStateChanged(auth, (user) => {
     
     }
 });
-// 로그아웃 
+
 document.getElementById("logoutBtn").addEventListener("click", async(event) => {
     signOut(auth).then(() => {
         // Sign-out successful.
-        console.log('로그아웃')
+        console.log('Logout Success')
+
         window.location.href = 'http://127.0.0.1:8000/home/';
     }).catch((error) => {
         // An error happened.
