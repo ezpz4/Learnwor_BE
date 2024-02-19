@@ -7,25 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--
     <script src="https://kit.fontawesome.com/87c08dff42.js" crossorigin="anonymous"></script>-->
-    <link rel="stylesheet" href="{% static 'learnwor/css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'learnwor/css/home.css'%}">
 
 </head>
 
 <body id="container">
     <!--나브-->
     <nav class="navbar">
+    <div class="nav_logo">
+        <a href="{% url 'home'%}">Learnwor</a>
+    </div>
+    <ul class="nav_menu">
+        <li><a href="{% url 'home'%}">Home</a></li>
+        <li><a href="{% url 'myPage'%}">My Page</a></li>
+    </ul>
+    <ul class="nav_login">
+        <li><a href="{% url 'login'%}">Login</a></li>
+        <li><a href="{% url 'signup'%}">SignUp</a></li>
+    </ul>
+    <a href="#" class="navbar_toggleBtn">
+        <i class="fa-solid fa-bars"></i>
+    </a>
+    </nav>
+    
+    <!-- <nav class="navbar">
         <div id="beforeLogin">
-            <button id="loginBtn" name="loginBtn" onclick="location.href='{% url 'login' %}'">Log In
+            <button id="loginBtn" name="loginBtn">Log In
             </button>
-            <button id="signupBtn" name="signupBtn" onclick="location.href='{% url 'signup' %}'">Sign Up
+            <button id="signupBtn" name="signupBtn">Sign Up
             </button>
         </div>
 
-        <!--로그인 성공시-->
-        <div id="afterLogin">
+        로그인 성공시-->
+        <!-- <div id="afterLogin">
             <button id="myPage">회원 이름</button>
         </div>  
-    </nav>
+    </nav>  -->
 
     <div class="scrollable">
 
@@ -40,9 +57,7 @@
                 <p>설명을 넣어줘~~  러너에대한 설명. 어쩌고 저쩌고. 우리는 이런이런팀이고 아래에 링크를 넣으면 된다. </p>
             </div>
             <!--링크-->
-            <form method="post" enctype="multipart/form-data" action="{% url 'home' %}" name="inputLinkForm">{% csrf_token %}
-            <input type="text" placeholder="링크를 입력하세요." id="inputLink" name="inputLink">
-            </form>
+            <input type="text" placeholder="링크를 입력하세요." id="inputLink">
         </div>
 
 
@@ -74,10 +89,28 @@
                 {% endif %}   
             </div>
         </div>
-    <!--소개 페이지-->
-    <!--푸터-->
-    </div>  
 
-<script type="module" src="{% static 'learnwor/js/home.js' %}">
+
+    <!--소개 페이지-->
+    <div class="container2">
+        <div class="title">"LearnNow"란?</div>
+        <div class="content">
+            <p>러너에대한 설명. 어쩌고 저쩌고. </br>
+                우리는 이런이런팀이고 아래에 링크를 넣으면 된다. </br>
+                설명을 넣어줘~~  러너에대한 설명. 어쩌고 저쩌고. </br>
+                우리는 이런이런팀이고 아래에 링크를 넣으면 된다.</p>
+            <p>러너에대한 설명. 어쩌고 저쩌고. </br>
+                우리는 이런이런팀이고 아래에 링크를 넣으면 된다. </br>
+                설명을 넣어줘~~  러너에대한 설명. 어쩌고 저쩌고. </br>
+                우리는 이런이런팀이고 아래에 링크를 넣으면 된다.</p>
+        </div>
+    </div>
+
+    
+    <!--푸터-->
+    <div class="footer">ⓒ2024 Learnwor. All right reserved.</div>
+
+
+<script type="module" src="{% static 'learnwor/js/home.js'%}">
 </script>
 </body>
