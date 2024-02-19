@@ -13,7 +13,7 @@
 
 <body id="container">
     <!--나브-->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav_logo">
             <a href="{% url 'home'%}">Learnwor</a>
         </div>
@@ -30,7 +30,7 @@
         </a>
         </nav>
 
-    <div class="scrollable">
+    <div class="scrollable" id="main">
 
         <!--링크 페이지-->
         <div id="mainPage" class="scrollable">
@@ -51,35 +51,43 @@
 
         <!--원문, 번역문-->
         <div id="translatePage">
-            <div>
-                <h5>원문</h5>
-            {% if before_news %}
-            <textarea id="beforeTranslate" cols="60", rows="45" readonly>
-                {{ before_news }}
-            </textarea>
+            {% if before_news and after_news %}
+                <div>
+                    <h5>원문</h5>
+                    <textarea id="beforeTranslate" cols="60", rows="45" readonly>
+                        {{ before_news }}
+                    </textarea>
+                </div>
+                <div>
+                    <h5>번역문</h5>
+                    <textarea id="beforeTranslate" cols="60", rows="45" readonly>
+                        {{ after_news }}
+                    </textarea>
+                </div>
             {% else %}
-            <textarea id="beforeTranslate" cols="60", rows="45" readonly>....
-
-            </textarea>
+                <div>
+                    <h5>원문</h5>
+                    <textarea id="beforeTranslate" cols="60", rows="45" readonly>
+                    </textarea>
+                </div>
+                <div>
+                    <h5>번역문</h5>
+                    <textarea id="beforeTranslate" cols="60", rows="45" readonly>
+                    </textarea>
+                </div>
             {% endif %}
             </div>
-
-            <div>
-                <h5>번역문</h5>
-                {% if after_news %}
-                <textarea id="beforeTranslate" cols="60", rows="45" readonly>
-                    {{ after_news }}
-                </textarea>
-                {% else %}
-                <textarea id="beforeTranslate" cols="60", rows="45" readonly>....
-    
-                </textarea>
-                {% endif %}   
-            </div>
         </div>
-    <!--소개 페이지-->
-    <!--푸터-->
-    </div>  
+
+        <!--소개 페이지-->
+        <!--푸터--> 
+    </div>
+
+    <!-- 로딩 화면 -->
+    <div id="loading-screen" class="modal">
+        <div class="spinner"></div>
+        <p>로딩 중...</p>
+    </div>
 
 <script type="module" src="{% static 'learnwor/js/home.js' %}">
 </script>
