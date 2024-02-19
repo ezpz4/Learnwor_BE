@@ -7,6 +7,7 @@ import re
 
 import openai
 OPENAI_API_KEY = "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"
+
 openai.api_key = OPENAI_API_KEY
 
 df = pd.read_csv('./learnwor/sc_dataset3.csv', encoding='utf-8')

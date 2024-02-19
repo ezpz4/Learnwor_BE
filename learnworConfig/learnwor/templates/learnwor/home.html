@@ -32,28 +32,8 @@
         </div>  
     </nav> 
 
-    {% comment %} <nav class="navbar">
-        <div id="beforeLogin">
-            <button id="loginBtn" name="loginBtn">
-                <a href="{% url 'login'%}">Log In</a>
-            </button>
-            <button id="signupBtn" name="signupBtn">
-                <a href="{% url 'signup'%}">Sign Up</a>
-            </button>
-        </div>
-
-        <!-- 로그인 성공시-->
-        <div id="afterLogin">
-            <button id="mypageBtn" name="mypage">
-                <a href="{% url 'mypage'%}">My page</a>
-            </button>
-            <button id="logoutBtn" name="logout">
-                <a href="{% url 'logout'%}">Logout</a>
-            </button>
-        </div>  
-    </nav> {% endcomment %}
-
     <div class="scrollable">
+
 
         <!--링크 페이지-->
         <div id="mainPage" class="scrollable">
@@ -76,7 +56,6 @@
                 <input type="text" placeholder="링크를 입력하세요." id="inputLink" name="inputLink">
             </form>
         </div>
-
 
         <!--원문, 번역문-->
         <div id="translatePage">
@@ -127,9 +106,17 @@
     <!--푸터-->
     <footer>
         <p><b>Learnwor</b> Copyright &copy; <b>Ezpz Corp</b>. All Rights Reserved.</p>
-    </footer>
+    </footer>  
 
-</div>  
+
+</div>
+    <!-- 로딩 화면 -->
+    <div id="loading-screen" class="modal">
+        <div class="spinner"></div>
+        <p>로딩 중...</p>
+    </div>
+
+
 
 <script type="module" src="{% static 'learnwor/js/home.js' %}">
 </script>
