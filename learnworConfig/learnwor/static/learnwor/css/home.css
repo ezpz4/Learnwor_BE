@@ -167,6 +167,16 @@ input[type="text"] {
     color: #9EABBC;
 }
 
+.Bhighlight {
+    background-color: #FFD7D7; /* 하이라이트 색상 */
+    font-weight: bold; /* 글자를 굵게 */
+}
+
+.Ahighlight{
+    background-color: #FDB29A; /* 하이라이트 색상 */
+    font-weight: bold; /* 글자를 굵게 */
+}
+
 #translatePage{
     background-color: #FFFFFF;
     display: flex;

@@ -62,9 +62,9 @@
             <div>
                 <h4 class="before">원문</h4>
             {% if before_news %}
-            <textarea id="beforeTranslate" cols="60", rows="45" readonly>
+            <p id="beforeTranslate" cols="60", rows="45" readonly>
                 {{ before_news }}
-            </textarea>
+            </p>
             {% else %}
             <textarea id="beforeTranslate" cols="60", rows="45" readonly> 뉴스 원문이 입력됩니다. 
 
@@ -75,9 +75,9 @@
             <div>
                 <h4 class="after">번역문</h4>
                 {% if after_news %}
-                <textarea id="beforeTranslate" cols="60", rows="45" readonly>
+                <p id="beforeTranslate" cols="60", rows="45" readonly>
                     {{ after_news }}
-                </textarea>
+                </p>
                 {% else %}
                 <textarea id="beforeTranslate" cols="60", rows="45" readonly> 쉬운 단어로 번역된 내용이 입력됩니다.
     
@@ -86,13 +86,19 @@
             </div>
         </div>
 
+        <div class="word">
+            {% if words %}
+                <p> {{ words }} </p>
+            {% endif %}   
+        </div>
+
     <!--소개 페이지-->
     <div class="container2">
         <!-- <div class="left-section">
             <img src="../images/IMG_3237.jpeg">
         </div> -->
         <div class="right-section">
-            <div class="title">"LearnNow"란?</div>
+            <div class="title">"Learnwor"란?</div>
             <div class="content">
                 <h4>Learnwor는 배우다라는 뜻의 Learn과 단어라는 뜻의 word를 합친 합성어입니다. </br>
                     Learnwor는 비전공자들이 전공 뉴스를 쉽게 이해할 수 있도록 전문 용어를 일반 용어로 변환해주는 서비스를 제공합니다.  </br>

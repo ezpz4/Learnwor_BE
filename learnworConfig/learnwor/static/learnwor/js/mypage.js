@@ -26,21 +26,21 @@ const nickname = document.getElementById("nickName")
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    nickname.textContent = user.displayName || '알 수 없는 사용자'; // displayName이 없는 경우 대체 텍스트 사용
+    nickname.textContent = user.displayName || 'Unknown User'; // displayName이 없는 경우 대체 텍스트 사용
     console.log(user.displayName);
   } else {
-    nickname.textContent = '알 수 없는 사용자';
-    console.log('사용자가 로그인하지 않았습니다.');
+    nickname.textContent = 'Unknown User';
+    console.log('User did not logout.');
   }
 });
 // 로그아웃 
 document.getElementById("logoutBtn").addEventListener("click", async(event) => {
   signOut(auth).then(() => {
       // Sign-out successful.
-      console.log('로그아웃 성공')
+      console.log('Logout Success')
       window.location.href = 'http://127.0.0.1:8000/home/';
   }).catch((error) => {
       // An error happened.
-      console.error('로그아웃 에러', error);
+      console.error('Logout error: ', error);
   });
 });
