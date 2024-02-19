@@ -41,9 +41,6 @@ document.getElementById("mypageBtn").addEventListener("click", function() {
     window.location.href = "/home/mypage";
 });
 
-document.getElementById("logoutBtn").addEventListener("click", function() {
-    window.location.href = "/home/login";
-});
 
 
 //기본 설정
@@ -72,7 +69,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebas
          * 로그인 후 uid와 이메일까지 나오는게 정상 입니다.
          * 
          */
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 const auth = getAuth();
 const user = auth.currentUser;
@@ -85,10 +82,26 @@ onAuthStateChanged(auth, (user) => {
     console.log(user)
     console.log(uid)
     console.log(display)
+
+    //로그인이 되어있다면, 변경
+    beforeLogin.style.display = "none";
+    afterLogin.style.display = "block";
     // ...
     } else {
     // User is signed out
     // ...
+    beforeLogin.style.display = "block";
+    afterLogin.style.display = "none";
     
     }
+});
+// 로그아웃
+document.getElementById("logoutBtn").addEventListener("click", async(event) => {
+    signOut(auth).then(() => {
+        // Sign-out successful.
+        console.log('로그아웃')
+        window.location.href = 'http://127.0.0.1:8000/home/';
+    }).catch((error) => {
+        // An error happened.
+    });
 });
