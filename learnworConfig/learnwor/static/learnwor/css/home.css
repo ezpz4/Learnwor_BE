@@ -1,7 +1,18 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
 /*나브 바*/
 .navbar {
     display: flex;
     justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    /* width: 100% */
+    left: 0;
+    right: 0;
 }
 #loginBtn{
     background-color: #9EABBC;
@@ -62,13 +73,13 @@
     justify-content: center;
 }
 #logo{
-
     font-family: 'Arsenal';
     font-style: italic;
     font-weight: 400;
     font-size: 130px;
     line-height: 163px;
     color: #EFECEC;
+    margin-top: 150px;
 
 text-shadow: 4px 0px 10px rgba(0, 0, 0, 0.25);
 }
@@ -86,10 +97,10 @@ text-shadow: 4px 0px 10px rgba(0, 0, 0, 0.25);
     color: #EFECEC;
 }
 input[type="text"] {
-    margin-top: 20px;
+    margin-top: 100px;
     box-sizing: border-box;
-    position: absolute;
-    width: 960px;
+    /* position: absolute; */
+    width: 1000px;
     height: 74px;
     left: calc(50% - 960px/2);
     top: calc(50% - 74px/2 + 177px);
@@ -112,12 +123,12 @@ input[type="text"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 960px; /* 초기 너비 설정 */
+    width: 1000px; /* 초기 너비 설정 */
     margin: 0 auto;
-    margin-top: 300px;
+    margin-top: 50px;
     margin-bottom: 30px;
     box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
+    border-radius: 25px;
     box-sizing: border-box;
 }
 
@@ -138,3 +149,99 @@ input[type="text"] {
     resize: none; /* 크기 조정 기능 비활성화 */
     border-top: 2px solid #EFECEC;
 }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Center children horizontally */
+    text-align: left; /* Center text for all children */
+    margin-bottom: 100px;
+}
+
+.title {
+    font-family: 'Arsenal', sans-serif; /* Ensure the 'Arsenal' font is loaded */
+    font-style: italic;
+    font-weight: 200;
+    font-size: 65px;
+    line-height: 163px;
+    color: #EFECEC;
+    text-shadow: 4px 0px 10px rgba(0, 0, 0, 0.25);
+    margin: 0; /* Remove any margin that could disrupt the layout */
+    padding: 20px 0; /* Provide some spacing above and below the title */
+}
+
+.content {
+    display: block; /* This is the default, you can remove this line if you want */
+    /* Add padding or margins as necessary */
+    margin-left: 20px;
+}
+
+.footer {
+      width:100%;  /* 영역 너비 */
+      height:50px;  /* 높이 */
+      background:#9EABBC;  /* 배경 색 */
+      color:rgb(255,255,255);  /* 글자 색 */
+      text-align: center; /* 가로 정렬 - 가운데 */
+      line-height: 100px;   /* 세로 정렬 - 가운데. line-height 값과 height 값을 같게 */
+    }
+
+/* navbar */
+.body {
+margin: 0;
+font-family: 'Montserrat';}
+
+a {
+text-decoration: none;
+color: #f0f4f5;}
+
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #0C2D57;
+padding: 8px 12px;}
+
+.nav_logo {
+font-size: 30px;
+color: #f0f4f5;}
+
+.nav_menu {
+display: flex;
+list-style: none;
+padding-left: 0;}
+
+.nav_menu li {
+font-size: 20px;
+padding: 5px 12px;
+}
+
+.nav_menu li:hover {
+color: #0C2D57;;
+background-color: #FC6736;
+border-radius: 4px;}
+
+.nav_menu li a:hover {
+color: #0C2D57;;}
+
+.nav_login {
+display: flex;
+color: #7dc0ff;
+list-style: none;
+padding-left: 0;}
+
+.nav_login li {
+font-size:15px;
+padding: 8px 8px;}
+
+.navbar_toggleBtn {
+display: none;
+color:#f0f4f5;
+position: absolute;
+right: 32px;
+font-size: 24px;}
