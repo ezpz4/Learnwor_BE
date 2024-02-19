@@ -21,44 +21,45 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
     const auth = getAuth();
 
     document.getElementById('signupSubmitButton').addEventListener('click', async (event) => {
-        event.preventDefault()
-        const email = document.getElementById('userEmail').value
-        const password = document.getElementById('userPassword').value
-        //const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value
-    
-        console.log(email)
-        console.log(password)
+        var userName = document.getElementById('userName').value;        
+        var userEmail = document.getElementById('userEmail').value;
+        var userPassword = document.getElementById('userPassword').value;
+        var confirmUserPassword = document.getElementById('confirmUserPassword').value;
 
-        //회원가입
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => { 
-                console.log(userCredential)
-                console.log('로그인 성공')
-                const user = userCredential.user;
-                //window.location.href = 'http://127.0.0.1:8000/learnworHome/';
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(error.message)
-            });
+        if(userName == "" || userEmail == "" || userPassword == "" || confirmUserPassword == ""){
+            alert("빈칸을 입력해주세요.")
+            event.preventDefault()
+        }else{
+            if(userPassword != confirmUserPassword){
+                alert("비밀번호를 다시 입력해주세요.")
+                event.preventDefault()
+            }else{
+                event.preventDefault()
+                const email = document.getElementById('userEmail').value
+                const password = document.getElementById('userPassword').value
+                console.log(email)
+                console.log(password)
+        
+                //회원가입
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => { 
+                        console.log(userCredential)
+                        console.log('회원가입 성공')
+                        const user = userCredential.user;
+                        window.location.href = 'http://127.0.0.1:8000/home/';
+                    })
+                    .catch((error) => {
+                        alert("회원가입 실패")
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.log(error.message)
+                    });
+            }
+        }
     })
 
-    /*
-    async function sendPostRequest(email, password, csrfToken) {
-        const response = await fetch('http://127.0.0.1:8000/learnworHome/signup', {
-            method: 'POST',
-            headers: {
-                'X-CSRFToken': csrfToken
-            }
-        });
-    
-        if (response.ok) {
-            console.log('POST request succeeded');
-            // 리디렉션
-            window.location.href = 'http://127.0.0.1:8000/learnworHome/';
-        } else {
-            console.error('POST request failed');
+    window.onpageshow = function(event) {
+        if (event.persisted) {
+            window.location.reload();
         }
-    }
-    */
+    };

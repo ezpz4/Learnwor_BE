@@ -11,10 +11,28 @@
   </head>
 
 <body id="container">
+
+  <!--나브-->
+  <nav class="navbar">
+    <div class="nav_logo">
+        <a href="{% url 'home'%}">Learnwor</a>
+    </div>
+    <ul class="nav_menu">
+        <li><a href="{% url 'home'%}">Home</a></li>
+        <li><a href="{% url 'myPage'%}">My Page</a></li>
+    </ul>
+    <ul class="nav_login">
+        <li><a href="{% url 'login'%}">Login</a></li>
+        <li><a href="{% url 'signup'%}">SignUp</a></li>
+    </ul>
+    <a href="#" class="navbar_toggleBtn">
+        <i class="fa-solid fa-bars"></i>
+    </a>
+    </nav>
+
   <div class="login-wrapper">
     <h2>Sign Up</h2>
-    <form method="post" action="#" id="signup-form">
-
+    <form method="post" action="#" id="signup-form">{% csrf_token %}
       <div class="form-control">
         <span id="username">Username</span>
         <input type="text" id="userName" placeholder="Enter username" required autocomplete="off">
@@ -37,15 +55,12 @@
     </form>
 
   </div>
-  <!-- <footer >
-      <div style="left: 76px; bottom: 100px; position: absolute; color: #BBBBBB; font-size: 24px; font-family: Amaranth; font-weight: 400; word-wrap: break-word">DEVELOPER </div>
-      <div style="left: 76px; bottom: 45px; position: absolute; color: #BBBBBB; font-size: 18px; font-family: Amaranth; font-weight: 400; word-wrap: break-word">Kabeen kim<br/></div>
-      <div style="left: 352px; bottom: 80px; position: absolute"><span style="color: #BBBBBB; font-size: 24px; font-family: Amaranth; font-weight: 400; word-wrap: break-word">CONTACT</span><span style="color: #BBBBBB; font-size: 28px; font-family: Amaranth; font-weight: 400; word-wrap: break-word"> <br/></span><span style="color: #DFDFDF; font-size: 18px; font-family: Amaranth; font-weight: 400; word-wrap: break-word"><br/></span></div>
-      <div style="left: 352px; bottom: 45px; position: absolute"><span style="color: #BBBBBB; font-size: 28px; font-family: Amaranth; font-weight: 400; word-wrap: break-word"> <br/></span><span style="color: #BBBBBB; font-size: 18px; font-family: Amaranth; font-weight: 400; word-wrap: break-word">kabin2205@gmail.com <br/></span></div>
-      <div style="width: 100%; height: 119px; left: 0px; bottom: 50px; position: absolute; border-top: 3px #BBBBBB solid"></div>
-  </footer> -->
 
-  <script type="module" src="{% static 'learnwor/js/signup.js' %}">
+  <footer>
+    <p>&copy; 2024 Your Website. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="{% static 'learnwor/js/signup.js'%}">
   </script>
 </body>
 </html>

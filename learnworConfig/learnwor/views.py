@@ -83,3 +83,6 @@ def login(request):
 
 def signup(request):
     return render(request, 'learnwor/signup.html')
+
+def myPage(request):
+    return render(request, 'learnwor/mypage.html')
