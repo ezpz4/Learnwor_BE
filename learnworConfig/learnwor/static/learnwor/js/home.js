@@ -17,21 +17,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.getElementById("loginBtn").addEventListener("click", function() {
-  // 클릭 이벤트가 발생했을 때 다른 HTML 페이지로 이동합니다.
   window.location.href = "/home/login";
 });
 
 document.getElementById("signupBtn").addEventListener("click", function() {
-  // 클릭 이벤트가 발생했을 때 다른 HTML 페이지로 이동합니다.
   window.location.href = "/home/signup";
 });
 
 document.getElementById("mypageBtn").addEventListener("click", function() {
-  // 클릭 이벤트가 발생했을 때 다른 HTML 페이지로 이동합니다.
   window.location.href = "/home/mypage";
 });
 
 document.getElementById("logoutBtn").addEventListener("click", function() {
-  // 클릭 이벤트가 발생했을 때 다른 HTML 페이지로 이동합니다.
   window.location.href = "/home/login";
 });
