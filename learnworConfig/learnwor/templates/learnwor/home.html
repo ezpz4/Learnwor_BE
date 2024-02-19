@@ -63,35 +63,30 @@
 
         <!--원문, 번역문-->
         <div id="translatePage">
+            <div>
+                <h5>원문</h5>
             {% if before_news %}
-            <div>
-                <h5>원문</h5>
-            
-            <textarea id="beforeTranslate" cols="60", rows="45" readonly>{{before_news}}
-
+            <textarea id="beforeTranslate" cols="60", rows="45" readonly>
+                {{ before_news }}
             </textarea>
-            </div>
-
-            <div>
-                <h5>원문</h5>
-            <textarea id="afterTranslate" cols="60", rows="45" readonly>?
-
-            </textarea>  
             {% else %}
-            <div>
-                <h5>원문</h5>
-            
-            <textarea id="beforeTranslate" cols="60", rows="45" readonly>{{before_news}}
+            <textarea id="beforeTranslate" cols="60", rows="45" readonly>....
 
             </textarea>
+            {% endif %}
             </div>
 
             <div>
-                <h5>원문</h5>
-            <textarea id="afterTranslate" cols="60", rows="45" readonly>?
-
-            </textarea>
-            {% endif %}    
+                <h5>번역문</h5>
+                {% if after_news %}
+                <textarea id="beforeTranslate" cols="60", rows="45" readonly>
+                    {{ after_news }}
+                </textarea>
+                {% else %}
+                <textarea id="beforeTranslate" cols="60", rows="45" readonly>....
+    
+                </textarea>
+                {% endif %}   
             </div>
         </div>
 
