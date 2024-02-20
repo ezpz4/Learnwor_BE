@@ -6,7 +6,7 @@ from konlpy.tag import Okt
 import re
 
 import openai
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "key"
 openai.api_key = OPENAI_API_KEY
 
 df = pd.read_csv('./learnwor/sc_dataset3.csv', encoding='utf-8')
@@ -49,7 +49,7 @@ def find_and_replace(input_sentence):
     messages = []
     content = output_sentence
 
-    messages.append({"role": "user", "content": content + "불용어가 잘못되어있는 문장들만 고쳐줄래?"})
+    messages.append({"role": "user", "content": content + "문장이 어색한 것을 고쳐줘."})
 
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
@@ -67,6 +67,7 @@ def index(request):
 
     highlighted_before_news=""
     highlighted_after_news=""
+    modified_translated_text=""
     
     changed_words_list = []  # 변경된 단어 목록
     unique_changed_words_list = []
@@ -97,15 +98,18 @@ def index(request):
         highlighted_before_news = highlight_beford_words(before_news, original_words)
         highlighted_after_news = highlight_after_words(after_news, translated_words)
 
+        # 마지막 문장을 제외하고 출력
+        modified_translated_text = remove_last_sentence(highlighted_after_news)
+
         return render(request, 'learnwor/home.html', {
             'before_news': highlighted_before_news, 
-            'after_news': highlighted_after_news, 
+            'after_news': modified_translated_text, 
             'words': unique_changed_words_list
         })
 
     return render(request, 'learnwor/home.html', {
             'before_news': highlighted_before_news, 
-            'after_news': highlighted_after_news, 
+            'after_news': modified_translated_text, 
             'words': unique_changed_words_list
         })
 
@@ -124,6 +128,16 @@ def highlight_after_words(text, words):
         text = text.replace(word, highlighted_word)
     return mark_safe(text)  # Django 템플릿에서 안전한 HTML로 마크
 
+def remove_last_sentence(translated_text):
+    # 문장을 분리합니다. 여기서는 '. '를 문장의 구분자로 가정합니다.
+    # 더 정교한 분리가 필요하다면, 정규 표현식 등을 사용할 수 있습니다.
+    sentences = translated_text.split('. ')
+    
+    # 마지막 문장을 제외한 모든 문장을 다시 결합합니다.
+    # 마지막에 있는 문장만 제외하고, 나머지 문장에는 마침표를 다시 추가합니다.
+    modified_text = '. '.join(sentences[:-1])
+    
+    return modified_text
 
 def login(request):
     return render(request, 'learnwor/login.html')
