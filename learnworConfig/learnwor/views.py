@@ -6,7 +6,7 @@ from konlpy.tag import Okt
 import re
 
 import openai
-OPENAI_API_KEY = "key"
+OPENAI_API_KEY = "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"
 openai.api_key = OPENAI_API_KEY
 
 df = pd.read_csv('./learnwor/sc_dataset3.csv', encoding='utf-8')
@@ -50,7 +50,7 @@ def find_and_replace(input_sentence):
     messages = []
     content = output_sentence
 
-    messages.append({"role": "user", "content": content + "문장 어색한 부분만 수정해"})
+    messages.append({"role": "user", "content": content + "문법적으로 어색한 부분만 고쳐서 출력하라."})
 
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",

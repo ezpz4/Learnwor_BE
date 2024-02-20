@@ -105,3 +105,5 @@ document.getElementById("logoutBtn").addEventListener("click", async(event) => {
         // An error happened.
     });
 });
+
+
