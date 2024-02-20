@@ -59,33 +59,44 @@
 
         <!--원문, 번역문-->
         <div id="translatePage">
-            {% if before_news and after_news %}
             <div>
                 <h4 class="before">원문</h4>
-                <div id="beforeTranslate" cols="60", rows="45" readonly>
-                    {{ before_news }}
-                </div>
-            </div>
-            <div>
-                <h4 class="after">번역문</h4>
-                <textarea id="beforeTranslate" cols="60", rows="45" readonly>
-                    {{ after_news }}
-                </textarea>
-            </div>
+            {% if before_news %}
+            <p id="beforeTranslate" cols="60", rows="45" readonly>
+                {{ before_news }}
+            </p>
             {% else %}
-            <div>
-                <h4 class="before">원문</h4>
-                <div id="beforeTranslate" cols="60", rows="45" readonly>뉴스 원문이 입력됩니다.
+            <textarea id="beforeTranslate" cols="60", rows="45" readonly> 뉴스 원문이 입력됩니다. 
 
-                </div>
+            </textarea>
+            {% endif %}
             </div>
+
             <div>
                 <h4 class="after">번역문</h4>
-                <textarea id="beforeTranslate" cols="60", rows="45" readonly>쉬운 단어로 번역된 내용이 입력됩니다.
-                    
+                {% if after_news %}
+                <p id="beforeTranslate" cols="60", rows="45" readonly>
+                    {{ after_news }}
+                </p>
+                {% else %}
+                <textarea id="beforeTranslate" cols="60", rows="45" readonly> 쉬운 단어로 번역된 내용이 입력됩니다.
+    
                 </textarea>
+                {% endif %}   
             </div>
-            {% endif %}
+        </div>
+
+        <div id="wordIntro">
+            {% comment %} <i id="icon" class="fa-solid fa-circle"></i> {% endcomment %}
+            <h3>최근 번역된 단어</h3>
+            <p>최근 번역된 단어를 확인해보세요!</p>
+        </div>
+        <div id="wordBox">
+            <div>
+            </div>
+            {% if words %}
+                {{ words }} 
+            {% endif %}   
         </div>
 
     <!--소개 페이지-->
@@ -94,7 +105,7 @@
             <img src="../images/IMG_3237.jpeg">
         </div> -->
         <div class="right-section">
-            <div class="title">"LearnNow"란?</div>
+            <div class="title">"Learnwor"란?</div>
             <div class="content">
                 <h4>Learnwor는 배우다라는 뜻의 Learn과 단어라는 뜻의 word를 합친 합성어입니다. </br>
                     Learnwor는 비전공자들이 전공 뉴스를 쉽게 이해할 수 있도록 전문 용어를 일반 용어로 변환해주는 서비스를 제공합니다.  </br>
@@ -103,6 +114,7 @@
             </div>
         </div>
     </div>
+{% comment %} </div> {% endcomment %}
 
     <!--푸터-->
     <footer>

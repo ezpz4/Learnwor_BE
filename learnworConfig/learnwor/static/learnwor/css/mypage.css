@@ -88,14 +88,6 @@ body{
   display: flex; /* 자식 요소를 가로로 나란히 배치합니다. */
 }
 
-#box3{
-  width:650px;
-	height:300px;
-	border-radius:10px;
-  background: #9EABBC;
-}
-
-
 #box1{
   width: 300px;
   height: 420px;
