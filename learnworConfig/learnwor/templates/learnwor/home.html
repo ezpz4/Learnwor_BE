@@ -86,9 +86,16 @@
             </div>
         </div>
 
-        <div class="word">
+        <div id="wordIntro">
+            {% comment %} <i id="icon" class="fa-solid fa-circle"></i> {% endcomment %}
+            <h3>최근 번역된 단어</h3>
+            <p>최근 번역된 단어를 확인해보세요!</p>
+        </div>
+        <div id="wordBox">
+            <div>
+            </div>
             {% if words %}
-                <p> {{ words }} </p>
+                {{ words }} 
             {% endif %}   
         </div>
 

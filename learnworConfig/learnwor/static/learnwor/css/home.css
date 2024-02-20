@@ -213,6 +213,60 @@ input[type="text"] {
     border-top: 2px solid #EFECEC;
 }
 
+#wordIntro{
+    margin-top: 100px;
+    position: relative;
+    color:#0C2D57;
+}
+#wordBox{
+    width: 1000px;
+    border-radius:10px;
+    background: #9EABBC;
+    padding:20px;
+    box-shadow: 0 8px 10px -3px rgb(190, 189, 189);
+    font-size: 20px;
+    font-family: 'Amaranth', sans-serif;
+    flex-direction: column;
+    position: relative;
+    color:#0C2D57;
+    margin-top: 10px;
+    margin-bottom:200px;
+    margin-right: auto; /* 중앙 정렬을 위해 추가 */
+    margin-left: auto;  /* 중앙 정렬을 위해 추가 */
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+}
+
+table {
+    /* border-collapse: collapse; */
+    width: 100%;
+    margin: auto;
+}
+
+th {
+    border-bottom: 1px dashed black;
+    padding: 8px;
+    text-align: center;
+}
+
+th.word1{
+    border-right: 1px dashed black;
+}
+
+
+td{
+    border-bottom: 1px dashed black;
+    padding: 13px;
+    text-align: center;
+}
+
+td.word1{
+    text-align: center; 
+    border-right: 1px dashed black; 
+    width:120px;
+}
+
 body{
     display: flex;
     justify-content: center;

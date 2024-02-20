@@ -6,7 +6,7 @@ from konlpy.tag import Okt
 import re
 
 import openai
-OPENAI_API_KEY = "key"
+OPENAI_API_KEY = "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"
 openai.api_key = OPENAI_API_KEY
 
 df = pd.read_csv('./learnwor/sc_dataset3.csv', encoding='utf-8')
@@ -71,6 +71,7 @@ def index(request):
     
     changed_words_list = []  # 변경된 단어 목록
     unique_changed_words_list = []
+    html_table = []
 
     if request.method == 'POST':
         print('post 성공')
@@ -89,6 +90,9 @@ def index(request):
         # 중복 제거 (단어의 순서 유지)
         unique_changed_words_list = list(dict.fromkeys(changed_words_list))
 
+        # HTML 테이블 생성
+        html_table = generate_html_table(unique_changed_words_list)
+
         # 중복 제거 후 변경된 단어 목록 준비
         unique_changed_words = list(dict.fromkeys(changed_words_list))
         original_words = [word[0] for word in unique_changed_words]  # 원래 단어 목록
@@ -104,13 +108,13 @@ def index(request):
         return render(request, 'learnwor/home.html', {
             'before_news': highlighted_before_news, 
             'after_news': modified_translated_text, 
-            'words': unique_changed_words_list
+            'words': html_table
         })
 
     return render(request, 'learnwor/home.html', {
             'before_news': highlighted_before_news, 
             'after_news': modified_translated_text, 
-            'words': unique_changed_words_list
+            'words': html_table
         })
 
 
@@ -138,6 +142,28 @@ def remove_last_sentence(translated_text):
     modified_text = '. '.join(sentences[:-1])
     
     return modified_text
+
+def generate_html_table(tuple_list):
+    html_table = "<table>\n"
+    html_table += "  <thead>\n"
+    html_table += "    <tr>\n"
+    html_table += '      <th class="word1">단어</th>\n'
+    html_table += "      <th>뜻</th>\n"
+    html_table += "    </tr>\n"
+    html_table += "  </thead>\n"
+    html_table += "  <tbody>\n"
+
+    for word, definition in tuple_list:
+        html_table += "    <tr>\n"
+        html_table += f'      <td class="word1">{word}</td>\n'
+        html_table += f"      <td>{definition}</td>\n"
+        html_table += "    </tr>\n"
+
+    html_table += "  </tbody>\n"
+    html_table += "</table>"
+
+    
+    return mark_safe(html_table)
 
 def login(request):
     return render(request, 'learnwor/login.html')
