@@ -6,7 +6,7 @@ from konlpy.tag import Okt
 import re
 
 import openai
-OPENAI_API_KEY = "key"
+OPENAI_API_KEY = "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"
 openai.api_key = OPENAI_API_KEY
 
 df = pd.read_csv('./learnwor/sc_dataset3.csv', encoding='utf-8')
@@ -108,7 +108,9 @@ def index(request):
         return render(request, 'learnwor/home.html', {
             'before_news': highlighted_before_news, 
             'after_news': modified_translated_text, 
-            'words': html_table
+            'words': html_table,
+            'original_words': original_words,
+            'translated_words': translated_words
         })
 
     return render(request, 'learnwor/home.html', {

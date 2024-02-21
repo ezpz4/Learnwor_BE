@@ -1,20 +1,19 @@
-//기본 설정
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";    
+
         const firebaseConfig = {
             apiKey: "AIzaSyAUkBV_sZ59E5gpSv7mQpfV_eIpt6nOAE0",
             authDomain: "learnwor-aa74b.firebaseapp.com",
             projectId: "learnwor-aa74b",
             storageBucket: "learnwor-aa74b.appspot.com",
             messagingSenderId: "609292163867",
-            appId: "1:609292163867:web:7120c8cb909d89946251be"
+            appId: "1:609292163867:web:7120c8cb909d89946251be",
+            databaseURL: "https://learnwor-aa74b-default-rtdb.firebaseio.com/",
         };
         
         const app = initializeApp(firebaseConfig);
 
         console.log('hello world')
         console.log(app)
-
 
 //회원가입
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";

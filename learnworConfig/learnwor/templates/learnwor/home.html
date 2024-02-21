@@ -62,7 +62,7 @@
             <div>
                 <h4 class="before">원문</h4>
             {% if before_news %}
-            <p id="beforeTranslate" cols="60", rows="45" readonly>
+            <p id="beforeTranslate" cols="60", rows="45" data-original ="{{original_words}}" readonly>
                 {{ before_news }}
             </p>
             {% else %}
@@ -75,11 +75,11 @@
             <div>
                 <h4 class="after">번역문</h4>
                 {% if after_news %}
-                <p id="beforeTranslate" cols="60", rows="45" readonly>
+                <p id="afterTranslate" cols="60", rows="45" readonly data-translate="{{translated_words}}">
                     {{ after_news }}
                 </p>
                 {% else %}
-                <textarea id="beforeTranslate" cols="60", rows="45" readonly> 쉬운 단어로 번역된 내용이 입력됩니다.
+                <textarea id="afterTranslate" cols="60", rows="45" readonly> 쉬운 단어로 번역된 내용이 입력됩니다.
     
                 </textarea>
                 {% endif %}   

@@ -164,7 +164,7 @@ td{
   /* text-align: center; */
 }
 
-td.word1{
+td.word{
   text-align: center; 
   border-right: 1px dashed black; 
   width:120px;
