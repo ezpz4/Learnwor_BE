@@ -1,2 +1,2 @@
-### how to run LEARNWOR 
+### How to run LEARNWOR 
 
