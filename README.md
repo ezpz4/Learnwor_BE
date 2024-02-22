@@ -1,7 +1,7 @@
 ### How to run LEARNWOR 
 
 1. git clone this BE repository
-2. Connect to [Open API](https://platform.openai.com/api-keys) and create a secret key.
+2. Connect to [OpenAI API](https://platform.openai.com/api-keys) and create a secret key.
 3. insert the created secret key into OPENAI_API_KEY on line 9 of views.py.
 4. execute source venv/bin/activate. (If you don't have virtual environments, you should make one)
 5. cd learnworConfig and run the django server.
