@@ -7,8 +7,8 @@
 5. cd learnworConfig and run the django server.
 6. connect to http://127.0.0.1:8000/home/ and enjoy the service.
 
+## Make sure when you choose the news to transform, you can insert news link only in [this page](https://news.naver.com/section/101). 
+
 If you have JVM error, run below.</br>
 **export JAVA_HOME=$(/usr/libexec/java_home)
 echo 'export JAVA_HOME=$(/usr/libexec/java_home)' >> ~/.bash_profile**
-
-You can insert news link only in [this page](https://news.naver.com/section/101). 
