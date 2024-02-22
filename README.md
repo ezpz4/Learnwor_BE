@@ -9,6 +9,8 @@
 
 ### Make sure when you choose the news to transform, you can insert news link only in [this page](https://news.naver.com/section/101). 
 
+------
+
 If you have JVM error, run below.</br>
 **export JAVA_HOME=$(/usr/libexec/java_home)
 echo 'export JAVA_HOME=$(/usr/libexec/java_home)' >> ~/.bash_profile**
